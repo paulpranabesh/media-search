@@ -27,6 +27,11 @@ Limit of results on upstream services must be configurable per environment and p
 Sample request : localhost:8080/media/list/jazz     
    (with BasicAuth password admin/password)
    Add in Http Header    Authorization/Basic YWRtaW46cGFzc3dvcmQ=
+
+
+
+
+
 response 
 
 [
