@@ -1,0 +1,38 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.8.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+	id 'groovy'
+}
+
+group = 'com.my.company'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-parent'
+	implementation 'org.springframework.boot:spring-boot-starter-cache'
+	implementation 'net.sf.ehcache:ehcache'
+	implementation 'javax.cache:cache-api'
+	implementation 'org.codehaus.groovy:groovy-all:2.4.15'
+	implementation 'org.springframework:spring-aop:5.0.1.RELEASE'
+	implementation 'org.aspectj:aspectjweaver:1.8.12'
+
+	implementation 'ch.qos.logback:logback-classic'
+	implementation 'org.slf4j:jul-to-slf4j'
+	implementation 'org.slf4j:log4j-over-slf4j'
+
+
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+	testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
+	testCompile 'org.spockframework:spock-spring:0.7-groovy-2.0'
+}
