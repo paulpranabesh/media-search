@@ -28,7 +28,7 @@ Sample request : localhost:8080/media/list/jazz
    (with BasicAuth password admin/password)
    Add in Http Header    Authorization/Basic YWRtaW46cGFzc3dvcmQ=
 
-
+'''The response is cached based on key.'''
 
 
 
