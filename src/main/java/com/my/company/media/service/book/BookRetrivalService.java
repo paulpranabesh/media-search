@@ -14,6 +14,8 @@ import org.springframework.web.client.RestTemplate;
 
 import java.text.MessageFormat;
 
+import static org.apache.commons.lang3.Validate.notEmpty;
+
 /**
  * Created by prpaul on 9/26/2019.
  */
@@ -27,6 +29,7 @@ public class BookRetrivalService {
 
     @TrackTime
     public BookApiResponse retrieveBook(final String searchKey) throws BookApiCommunicationException {
+        notEmpty(searchKey, "'searchKey' cannot be null or empty");
         String url = MessageFormat.format(config.getGoogleBookApi(), bookRetrivalParams(searchKey));
         try{
             BookApiResponse response = restTemplate.getForObject(url, BookApiResponse.class);
