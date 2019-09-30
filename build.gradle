@@ -24,15 +24,14 @@ dependencies {
 	implementation 'org.codehaus.groovy:groovy-all:2.4.15'
 	implementation 'org.springframework:spring-aop:5.0.1.RELEASE'
 	implementation 'org.aspectj:aspectjweaver:1.8.12'
+	implementation 'org.apache.commons:commons-lang3:3.0'
 
 	implementation 'ch.qos.logback:logback-classic'
 	implementation 'org.slf4j:jul-to-slf4j'
 	implementation 'org.slf4j:log4j-over-slf4j'
 
-
-
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.security:spring-security-test'
-	testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
-	testCompile 'org.spockframework:spock-spring:0.7-groovy-2.0'
+	testCompile 'org.springframework.boot:spring-boot-starter-test'
+	testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
+	testCompile 'org.spockframework:spock-spring:1.1-groovy-2.4'
+	testRuntime 'cglib:cglib-nodep:3.2.4'
 }

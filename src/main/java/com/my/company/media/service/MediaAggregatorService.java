@@ -16,9 +16,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.util.*;
 import java.util.stream.Collectors;
+
+import static org.apache.commons.lang3.Validate.notEmpty;
 
 /**
  * Created by prpaul on 9/26/2019.
@@ -34,12 +37,15 @@ public class MediaAggregatorService {
 
     @Cacheable(cacheNames="mediaCache", key="#searchKey")
     public List<Media> searchMedia(final String searchKey) throws NoMediaFoundException{
+        notEmpty(searchKey, "'searchKey' cannot be null or empty");
         List<Media> mediaInformations = new LinkedList<Media>();
         boolean bookRetrivalSuccessful = populateBooks(mediaInformations, searchKey);
         boolean albumRetrivalSuccessful = populateAlbums(mediaInformations, searchKey);
         if(bookRetrivalSuccessful || albumRetrivalSuccessful){
             List<Media> result = mediaInformations.stream().sorted(Comparator.comparing(Media::getTitle)).collect(Collectors.<Media>toList());
-            return result;
+            if(!CollectionUtils.isEmpty(result)){
+                return result;
+            }
         }
         String errorMsg = "Unable to retrieve informations from external apis with search key :"+searchKey;
         logger.error(errorMsg);

@@ -4,6 +4,7 @@ import com.my.company.media.aop.TrackTime;
 import com.my.company.media.exception.ITunesApiCommunicationException;
 import com.my.company.media.model.dto.itunes.album.ITunesApiResponse;
 import com.my.company.media.configuration.AppProperties;
+import com.sun.istack.internal.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,9 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.text.MessageFormat;
+
+import static org.apache.commons.lang3.Validate.notEmpty;
+import static org.apache.commons.lang3.Validate.notNull;
 
 /**
  * Created by prpaul on 9/26/2019.
@@ -25,6 +29,7 @@ public class AlbumRetrivalService {
     private RestTemplate restTemplate;
     @TrackTime
     public ITunesApiResponse retrieveAlbum(final String searchKey) throws ITunesApiCommunicationException {
+        notEmpty(searchKey, "'searchKey' cannot be null or empty");
         String url = MessageFormat.format(config.getiTunesAlbumApi(), albumRetrivalParams(searchKey));
         try{
             ITunesApiResponse response = restTemplate.getForObject(url, ITunesApiResponse.class);
