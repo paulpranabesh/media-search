@@ -34,68 +34,68 @@ Sample request : localhost:8080/media/list/jazz
 
 response 
 
-'''[
-    {
-        "type": "Album",
-        "title": "50 Gospel Jazz Classics",
-        "artist": "Smooth Jazz All Stars"
-    },
-    {
-        "type": "Album",
-        "title": "50 Smooth Jazz Classics",
-        "artist": "Smooth Jazz All Stars"
-    },
-    {
-        "type": "Book",
-        "title": "Annual review of jazz studies",
-        "authors": [
-            "Rutgers University. Institute of Jazz Studies"
-        ]
-    },
-    {
-        "type": "Album",
-        "title": "Ella & Friends",
-        "artist": "Ella Fitzgerald"
-    },
-    {
-        "type": "Album",
-        "title": "Ella & Louis for Lovers",
-        "artist": "Ella Fitzgerald & Louis Armstrong"
-    },
-    {
-        "type": "Album",
-        "title": "Ella Fitzgerald Sings the Cole Porter Songbook (Expanded Edition)",
-        "artist": "Ella Fitzgerald"
-    },
-    {
-        "type": "Book",
-        "title": "Jazz",
-        "authors": [
-            "Morley Jones"
-        ]
-    },
-    {
-        "type": "Book",
-        "title": "Jazz Music",
-        "authors": [
-            "Max Jones"
-        ]
-    },
-    {
-        "type": "Book",
-        "title": "Love, Life and All That Jazz",
-        "authors": [
-            "Ahmed Faiyaz"
-        ]
-    },
-    {
-        "type": "Book",
-        "title": "The Story of Jazz",
-        "authors": [
-            "Marshall Winslow Stearns"
-        ]
-    }
-]'''
+[ 
+   { 
+      "type":"Album",
+      "title":"50 Gospel Jazz Classics",
+      "artist":"Smooth Jazz All Stars"
+   },
+   { 
+      "type":"Album",
+      "title":"50 Smooth Jazz Classics",
+      "artist":"Smooth Jazz All Stars"
+   },
+   { 
+      "type":"Book",
+      "title":"Annual review of jazz studies",
+      "authors":[ 
+         "Rutgers University. Institute of Jazz Studies"
+      ]
+   },
+   { 
+      "type":"Album",
+      "title":"Ella & Friends",
+      "artist":"Ella Fitzgerald"
+   },
+   { 
+      "type":"Album",
+      "title":"Ella & Louis for Lovers",
+      "artist":"Ella Fitzgerald & Louis Armstrong"
+   },
+   { 
+      "type":"Album",
+      "title":"Ella Fitzgerald Sings the Cole Porter Songbook (Expanded Edition)",
+      "artist":"Ella Fitzgerald"
+   },
+   { 
+      "type":"Book",
+      "title":"Jazz",
+      "authors":[ 
+         "Morley Jones"
+      ]
+   },
+   { 
+      "type":"Book",
+      "title":"Jazz Music",
+      "authors":[ 
+         "Max Jones"
+      ]
+   },
+   { 
+      "type":"Book",
+      "title":"Love, Life and All That Jazz",
+      "authors":[ 
+         "Ahmed Faiyaz"
+      ]
+   },
+   { 
+      "type":"Book",
+      "title":"The Story of Jazz",
+      "authors":[ 
+         "Marshall Winslow Stearns"
+      ]
+   }
+]
 
 
 Metric to see how long the external API takes in average milli second it takes.
