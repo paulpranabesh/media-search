@@ -22,18 +22,10 @@ public class ExternalApiAccessData {
     }
 
     public synchronized long avgAccessTime(){
+        if(hitCount == 0l){
+            return 0l;
+        }
         return totalAccessTime/hitCount;
     }
 
-    public long getHitCount() {
-        return hitCount;
-    }
-
-    public Date getLastAccess() {
-        return lastAccess;
-    }
-
-    public long getTotalAccessTime() {
-        return totalAccessTime;
-    }
 }

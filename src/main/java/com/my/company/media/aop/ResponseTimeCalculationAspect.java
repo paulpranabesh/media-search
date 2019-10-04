@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 /**
  * Created by prpaul on 9/27/2019.
  */
-@EnableAspectJAutoProxy
 @Aspect
 @Component
 public class ResponseTimeCalculationAspect {

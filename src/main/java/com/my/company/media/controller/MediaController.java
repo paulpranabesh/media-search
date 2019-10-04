@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,12 +23,12 @@ import java.util.List;
 public class MediaController {
     private final Logger logger = LoggerFactory.getLogger(MediaController.class);
     @Autowired
-    private MediaAggregatorService mediaAggregator;
+    private MediaAggregatorService mediaAggregatorService;
 
     @GetMapping(path = "/list/{searchKey}",produces = "application/json")
     public List<Media> retrieveInformation(@PathVariable final String searchKey){
         try {
-            return mediaAggregator.searchMedia(searchKey);
+            return mediaAggregatorService.searchMedia(searchKey);
         } catch (NoMediaFoundException e) {
             logger.error("No media informations found.", e);
             throw new ResponseStatusException(
