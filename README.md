@@ -33,7 +33,7 @@ Sample request : localhost:8080/media/list/jazz
 
 
 response 
-
+```
 [ 
    { 
       "type":"Album",
@@ -96,6 +96,8 @@ response
       ]
    }
 ]
+```
+
 
 
 Metric to see how long the external API takes in average milli second it takes.
