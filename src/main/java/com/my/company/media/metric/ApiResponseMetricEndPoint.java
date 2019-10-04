@@ -26,15 +26,19 @@ public class ApiResponseMetricEndPoint {
     }
 
     @ReadOperation
-    public Map<ExternalApi, Long> responseTimeMetric() {
-        Map<ExternalApi, Long> details = new LinkedHashMap<>();
+    public Map<ExternalApi, String> responseTimeMetric() {
+        Map<ExternalApi, String> details = new LinkedHashMap<>();
         accessMetric.entrySet().forEach(entry->{
-            details.put(entry.getKey(), entry.getValue().avgAccessTime());
+            details.put(entry.getKey(), accessTimeDetails(entry.getValue().avgAccessTime()));
         });
         return details;
     }
 
     public void receiveAccessData(ExternalApi apiName, long accessTime){
         accessMetric.get(apiName).update(accessTime);
+    }
+
+    private String accessTimeDetails(Long timeTaken){
+        return "Average access time: "+timeTaken+" milli seconds.";
     }
 }
