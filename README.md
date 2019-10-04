@@ -34,7 +34,7 @@ Sample request : localhost:8080/media/list/jazz
 
 response 
 
-[
+'''[
     {
         "type": "Album",
         "title": "50 Gospel Jazz Classics",
@@ -95,7 +95,7 @@ response
             "Marshall Winslow Stearns"
         ]
     }
-]
+]'''
 
 
 Metric to see how long the external API takes in average milli second it takes.
@@ -108,7 +108,7 @@ request  http://localhost:8080/actuator/external-api-response
 response 
 
 {
-    "GOOGLE_BOOK_API": 1936,
-    "ITUNES_MUSIC_API": 2032
+    "GOOGLE_BOOK_API": "Average access time: 2266 milli seconds.",
+    "ITUNES_MUSIC_API": "Average access time: 1131 milli seconds."
 }
 
