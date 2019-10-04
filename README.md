@@ -109,8 +109,9 @@ request  http://localhost:8080/actuator/external-api-response
    
 response 
 
+```
 {
     "GOOGLE_BOOK_API": "Average access time: 2266 milli seconds.",
     "ITUNES_MUSIC_API": "Average access time: 1131 milli seconds."
 }
-
+```
